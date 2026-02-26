@@ -118,6 +118,7 @@ Implement this function to keep track of column numbers
 void updateCol() {
     yycol = scancol;
     scancol += yyleng;
+    yylineno = scanlineno;
 }
 
 /* TODO:
