@@ -77,7 +77,7 @@ illidentifier   [0-9]+[a-zA-Z][a-zA-Z0-9]*
 "!"             { updateCol(); return OPER_NOT; }
 "@"             { updateCol(); return OPER_AT; }
 
- /* Suggestion: - Brackets and punctuation - ( ) [ ] { } ; must be above the catch-all or they will be marked as illegal tokens */
+ /* Suggestion: - Brackets and punctuation - ( ) [ ] { } , ; must be above the catch-all or they will be marked as illegal tokens */
 "["             { updateCol(); return LSQ_BRKT; }
 "]"             { updateCol(); return RSQ_BRKT; }
 "{"             { updateCol(); return LCRLY_BRKT; }
