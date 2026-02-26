@@ -145,4 +145,37 @@ convert valid escape sequences into escaped characters
 (string[0] == '\\' and string[1] == 'n', then string[0] should be '\n')
 */
 int processString(){
+    const char *src = yytext + 1;
+    int len = strlen(yytext) - 2;
+    int col_base = yycol;
+
+    char *buf = malloc(len + 1);
+    if (!buf) {
+        yyerror = "malloc failed";
+        return ERROR;
+    }
+
+    int j = 0;
+    for (int i = 0; i < len; i++) {
+        if (src[i] == '\\') {
+            char esc = src[i + 1];
+            switch (esc) {
+                case 'n':  buf[j++] = '\n'; i++; break;
+                case 't':  buf[j++] = '\t'; i++; break;
+                case '"':  buf[j++] = '"';  i++; break;
+                case '\\': buf[j++] = '\\'; i++; break;
+                default:
+                    yycol   = col_base + i + 2;
+                    yyerror = "Unrecognized escape character in String";
+                    free(buf);
+                    return ERROR;
+            }
+        } else {
+            buf[j++] = src[i];
+        }
+    }
+    buf[j] = '\0';
+    yycol  = col_base;
+    yytext = buf;
+    return STRCONST;
 }
