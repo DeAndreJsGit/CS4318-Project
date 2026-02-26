@@ -127,7 +127,7 @@ void countLines(){
     yycol = scancol;
     yylineno = scanlineno;
     for (int i = 0; i < yyleng; i++){
-        if (yytext[i] == \n){
+        if (yytext[i] == '\n'){
             scanlineno++;
             scancol = 1;
         }
