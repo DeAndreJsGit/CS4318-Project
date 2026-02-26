@@ -117,13 +117,22 @@ Implement this function to keep track of column numbers
 
 void updateCol() {
     yycol = scancol;
-    scancol = scancol + yyleng;
+    scancol += yyleng;
 }
 
 /* TODO:
 Implement this function to keep track of line numbers
 */
 void countLines(){
+    yycol = scancol;
+    yylineno = scanlineno;
+    for (int i = 0; i < yyleng; i++){
+        if (yytext[i] == \n){
+            scanlineno++;
+            scancol = 1;
+        }
+        else scancol++;
+    }
 }
 
 
