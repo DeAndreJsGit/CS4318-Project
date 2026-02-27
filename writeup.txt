@@ -1,3 +1,5 @@
+// TODO: DeAndre - I don't have access to the repository settings so you need to 
+// rename the repository Project1_atp67_hyx3 to comply with the project instructions
 Brenden L'Heureux CS4318
 DeAndre Johnson CS4318
 
