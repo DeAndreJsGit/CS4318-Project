@@ -1,0 +1,12 @@
+Brenden L'Heureux CS4318
+DeAndre Johnson CS4318
+
+// TODO: fill out contributions
+Contributions:
+Brenden L'Heureux - 
+DeAndre Johnson - 
+
+// TODO: make the test file and another way to test correctness
+Testing:
+
+Create a custom test file where I will write test cases for each type of token
