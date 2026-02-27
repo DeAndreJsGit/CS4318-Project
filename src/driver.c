@@ -84,6 +84,9 @@ void printToken(const int tokenNum) {
     case OPER_ASGN:
       printf("<OPERATOR, => : (%d:%d)\n", yylineno, yycol);
       break;
+    case OPER_AT:
+      printf("<OPERATOR, @> : (%d:%d)\n", yylineno, yycol);
+      break;
     case OPER_INC:
       printf("<OPERATOR, ++> : (%d:%d)\n", yylineno, yycol);
       break;

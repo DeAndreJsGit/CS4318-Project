@@ -1,0 +1,12 @@
+/* Major stuff */
+IDexample 999 'a' "string"
+/* Keywords */
+if else while int string char return void
+/* Operators */
++ - * / < > >= <= == != = @ ++ -- && || ! %
+/* Brackets and Parens */
+[ ] { } ( )
+/* Punctuation */
+, ;
+/* Illegal Token and Error */
+$ /* unterminated comment

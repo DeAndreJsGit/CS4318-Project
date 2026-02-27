@@ -5,10 +5,11 @@ DeAndre Johnson CS4318
 
 // TODO: fill out contributions
 Contributions:
-Brenden L'Heureux - 
+Brenden L'Heureux - Wrote the countLines and processString functions, various bug fixes,
+added the OPER_AT to the driver.c file so it's recognized as an operator.
 DeAndre Johnson - 
 
 // TODO: make the test file and another way to test correctness
 Testing:
-
-Create a custom test file where I will write test cases for each type of token
+Create a custom test file (test.txt) where I will write test cases for each type of token.
+Run it 

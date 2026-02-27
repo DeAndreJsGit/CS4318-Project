@@ -34,10 +34,9 @@ character       '.'
 string     \"([^\"\n\\]|\\.)*\"
 
  /* If the end quote is not found in the same line the string is unterminated */
-untermstring    \"([^\"\n\\]|\\.)*\n|\"([^\"\n\\]|\\.)*$
+untermstring    \"([^\"\n\\]|\\.)*\n
 
 comment         "/*"([^*]|\*+[^*/])*\*+"/"
-multlncomment   "/*"([^*]|\*+[^*/])*\*+"/"
 untermcomment   "/*"([^*]|\*+[^*/])*
 
 identifier      [a-zA-Z][a-zA-Z0-9]*
