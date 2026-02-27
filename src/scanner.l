@@ -38,7 +38,7 @@ untermstring    \"([^\"\n\\]|\\.)*\n|\"([^\"\n\\]|\\.)*$
 
 comment         "/*"([^*]|\*+[^*/])*\*+"/"
 multlncomment   "/*"([^*]|\*+[^*/])*\*+"/"
-untermcomment   "/*"([^*]|\*+[^*/])*$
+untermcomment   "/*"([^*]|\*+[^*/])*
 
 identifier      [a-zA-Z][a-zA-Z0-9]*
 illidentifier   [0-9]+[a-zA-Z][a-zA-Z0-9]*
@@ -100,7 +100,7 @@ illidentifier   [0-9]+[a-zA-Z][a-zA-Z0-9]*
 
  /* 5. Comments - countLines handles both single and multi-line */
 {comment}       { countLines(); /* silently discard */ }
-{untermcomment} { countLines(); yyerror = "Unterminated comment"; return ERROR; }
+{untermcomment} { countLines(); yyerror = "Unterminated Comment"; return ERROR; }
 
  /* 6. Other */
 {newline}       { countLines(); }
