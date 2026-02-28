@@ -7,7 +7,8 @@ DeAndre Johnson CS4318
 Contributions:
 Brenden L'Heureux - Wrote the countLines and processString functions, various bug fixes,
 added the OPER_AT to the driver.c file so it's recognized as an operator.
-DeAndre Johnson - 
+DeAndre Johnson - Wrote pattern and rules definitions, seting up the overall structure of scanner.l
+and opened for functionality of declarations to be implemented.
 
 // TODO: make the test file and another way to test correctness
 Testing:
