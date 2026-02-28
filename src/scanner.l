@@ -37,7 +37,7 @@ string     \"([^\"\n\\]|\\.)*\"
 untermstring    \"([^\"\n\\]|\\.)*\n
 
 comment         "/*"([^*]|\*+[^*/])*\*+"/"
-untermcomment   "/*"([^*]|\*+[^*/])*
+untermcomment   "/*"([^*]|\*+[^*/])*$
 
 identifier      [a-zA-Z][a-zA-Z0-9]*
 illidentifier   [0-9]+[a-zA-Z][a-zA-Z0-9]*
@@ -95,11 +95,13 @@ illidentifier   [0-9]+[a-zA-Z][a-zA-Z0-9]*
 {integerlead0}  { updateCol(); yyerror = "Integer cannot have leading zeros"; return ERROR; }
 {character}     { updateCol(); return CHARCONST; }
 {string}        { updateCol(); return processString(); }
-{untermstring}  { updateCol(); yyerror = "Unterminated string"; return ERROR; }
+{untermstring}  { updateCol(); yyerror = "Unterminated string constant"; return ERROR; }
+
 
  /* 5. Comments - countLines handles both single and multi-line */
 {comment}       { countLines(); /* silently discard */ }
 {untermcomment} { countLines(); yyerror = "Unterminated Comment"; return ERROR; }
+
 
  /* 6. Other */
 {newline}       { countLines(); }
