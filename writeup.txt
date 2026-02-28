@@ -1,16 +1,50 @@
-// TODO: DeAndre - I don't have access to the repository settings so you need to 
-// rename the repository Project1_atp67_hyx3 to comply with the project instructions
 Brenden L'Heureux CS4318
 DeAndre Johnson CS4318
 
-// TODO: fill out contributions
 Contributions:
 Brenden L'Heureux - Wrote the countLines and processString functions, various bug fixes,
 added the OPER_AT to the driver.c file so it's recognized as an operator.
 DeAndre Johnson - Wrote pattern and rules definitions, seting up the overall structure of scanner.l
 and opened for functionality of declarations to be implemented.
 
-// TODO: make the test file and another way to test correctness
+
 Testing:
-Create a custom test file (test.txt) where I will write test cases for each type of token.
-Run it 
+
+1.
+Input:
+cat > test_writeup_a.txt << 'EOF'
+int x = 007;
+int y = 5 # 3;
+EOF
+
+Run command:obj/scanner test_writeup_a.txt
+
+Output:
+<KEYWORD, int> : (1:1)
+<ID, x> : (1:5)
+<OPERATOR, => : (1:7)
+<ERROR, Integer cannot have leading zeros> : (1:9)
+<PUNCTUATION, ;> : (1:12)
+<KEYWORD, int> : (2:1)
+<ID, y> : (2:5)
+<OPERATOR, => : (2:7)
+<INTEGER, 5> : (2:9)
+<ILLEGAL TOKEN, #> : (2:11)
+<INTEGER, 3> : (2:13)
+<PUNCTUATION, ;> : (2:14)
+
+2.
+Input:
+cat > test_writeup_b.txt << 'EOF'
+/* this is a valid comment */
+int x;
+/* this comment never ends
+EOF
+
+Run command: obj/scanner test_writeup_b.txt
+
+Output:
+<KEYWORD, int> : (2:1)
+<ID, x> : (2:5)
+<PUNCTUATION, ;> : (2:6)
+<ERROR, Unterminated Comment> : (3:1)
